@@ -2,6 +2,32 @@
     ViewBag.Title = "Url Pretty Print";
 }
 
+@section meta {
+<meta name="description" content="Url Pretty Print" />
+<meta name="keywords" content="url pretty print, url parameters, pretty, print" />
+
+<meta name="expires" content="never" />
+<meta name="language" content="english" />
+<meta name="distribution" content="Global" />
+<meta name="robots" content="ALL,INDEX,FOLLOW" />
+
+<meta name="document-class" content="Completed">
+<meta name="document-classification" content="Url Pretty Print">
+
+<meta name="author" content="Steve Shearn" />
+<meta name="document-rights" content="Public Domain" />
+<meta name="document-type" content="Public" />
+<meta name="document-rating" content="General" />
+<meta name="document-distribution" content="Global" />
+<meta name="document-state" content="Dynamic" />
+<meta name="cache-control" content="Public" />
+<meta name="copyright" content="Url Pretty Print" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Language" content="en-us" />
+<meta name="abstract" content="Url Pretty Print" />
+}
+
 <div class="row">
     <div class="col-md-6 col-md-offset-3">
         <h1>Url Pretty Print</h1>
@@ -21,6 +47,10 @@
         </div>
 
         <input type="submit" class="btn btn-primary" value="Pretty Print Url">
+        
+        <p class="pull-right">
+            <a href="https://github.com/shearnie/UrlPrettyPrint" target="_blank"><i class="fa fa-github fa-2x"></i></a>
+        </p>
         @{ Html.EndForm(); }
     </div>
 </div>
