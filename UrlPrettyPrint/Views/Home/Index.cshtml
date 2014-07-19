@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Url Pretty Print";
+}
+
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <h1>Url Pretty Print</h1>
+        <hr />
+
+        <p>
+            A basic pretty printer for breaking up a one line url into parameters.
+        </p>
+
+        <p>
+            Paste the Url in the text area below, click the "<i>Pretty Print Url</i>" button, and see pretty printed Url.
+        </p>
+
+        @{ Html.BeginForm("Index", "Home", FormMethod.Post); }
+        <div style="margin-bottom: 20px;">
+            <textarea name="txturl" id="txturl" class="form-control" rows="10" required autofocus></textarea>
+        </div>
+
+        <input type="submit" class="btn btn-primary" value="Pretty Print Url">
+        @{ Html.EndForm(); }
+    </div>
+</div>
