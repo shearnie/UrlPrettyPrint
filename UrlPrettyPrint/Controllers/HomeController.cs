@@ -17,27 +17,35 @@ namespace UrlPrettyPrint.Controllers
         [HttpPost]
         public ActionResult Index(string txturl)
         {
+            ViewBag.q = txturl;
+
             if (string.IsNullOrEmpty(txturl)) return View("Pretty");
 
             var sb = new StringBuilder();
 
+            // split up
             var qs = txturl.Split('?');
-            sb.Append(qs[0]);
-            sb.AppendLine("<br />");
+            sb.AppendLine(qs[0]);
+            sb.AppendLine();
 
+            // get params
             var parms = qs.Count() < 2 ? qs[0] : qs[1];
-
             var parse = HttpUtility.ParseQueryString(parms);
-            foreach (string k in parse.Keys)
+            var keys = (from string k in parse.Keys where !string.IsNullOrEmpty(k) select k).ToList();
+
+            if (!keys.Any()) return View("Pretty");
+
+            // determine spacing
+            var longestLength = keys.OrderByDescending(k => k.Length).FirstOrDefault().Length;
+
+            foreach (string k in keys)
             {
-                if (string.IsNullOrEmpty(k)) continue;
                 sb.Append(k);
+                sb.Append(new String(' ', longestLength - k.Length));
                 sb.Append(" = ");
-                sb.Append(parse[k]);
-                sb.AppendLine("<br />");
+                sb.AppendLine(parse[k]);
             }
 
-            ViewBag.q = txturl;
             ViewBag.pretty = sb.ToString();
             return View("Pretty");
         }
