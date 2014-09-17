@@ -9,14 +9,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Url Pretty Printed</title>
+    
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans+Mono' rel='stylesheet' type='text/css'>
+    <style>
+        p {
+            font-family: 'Droid Sans Mono';
+        }
+    </style>
 </head>
 
-<body>
-    <p style="margin: 20px;">
-        @Html.Raw(ViewBag.pretty)
-    </p>
-    <p style="margin: 20px;">
-        <a href="@Url.Action("Index")">New pretty</a>
-    </p>
-</body>
+    <body>
+        <p style="margin: 20px;">
+            Busy: @Html.Raw(ViewBag.q)
+        </p>
+        <hr/>
+        <p style="margin: 20px;">
+            Pretty:
+        </p>
+        <p style="margin: 20px;">
+            @Html.Raw(ViewBag.pretty)
+        </p>
+        <p style="margin: 20px;">
+            <a href="@Url.Action("Index")">New pretty</a>
+        </p>
+    </body>
 </html>

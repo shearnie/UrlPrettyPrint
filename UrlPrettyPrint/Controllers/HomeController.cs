@@ -36,7 +36,8 @@ namespace UrlPrettyPrint.Controllers
                 sb.Append(parse[k]);
                 sb.AppendLine("<br />");
             }
-            
+
+            ViewBag.q = txturl;
             ViewBag.pretty = sb.ToString();
             return View("Pretty");
         }
