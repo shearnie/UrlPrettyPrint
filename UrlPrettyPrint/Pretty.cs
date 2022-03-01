@@ -1,30 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Text;
 using System.Web;
-using System.Web.Mvc;
 
-namespace UrlPrettyPrint.Controllers
+namespace UrlPrettyPrint
 {
-    public class HomeController : Controller
+    public static class Pretty
     {
-        public ActionResult Index()
+        public static string Print(string urlValue)
         {
-            return View();
-        }
 
-        [HttpPost]
-        public ActionResult Index(string txturl)
-        {
-            ViewBag.q = txturl;
-
-            if (string.IsNullOrEmpty(txturl)) return View("Pretty");
+            if (string.IsNullOrWhiteSpace(urlValue))
+            {
+                return string.Empty;
+            }
 
             var sb = new StringBuilder();
 
             // split up
-            var qs = txturl.Split('?');
+            var qs = urlValue.Split('?');
             sb.AppendLine(qs[0]);
             sb.AppendLine();
 
@@ -33,10 +25,13 @@ namespace UrlPrettyPrint.Controllers
             var parse = HttpUtility.ParseQueryString(parms);
             var keys = (from string k in parse.Keys where !string.IsNullOrEmpty(k) select k).ToList();
 
-            if (!keys.Any()) return View("Pretty");
+            if (!keys.Any())
+            {
+                return string.Empty;
+            }
 
             // determine spacing
-            var longestLength = keys.OrderByDescending(k => k.Length).FirstOrDefault().Length;
+            var longestLength = keys.OrderByDescending(k => k.Length).First().Length;
 
             foreach (string k in keys)
             {
@@ -46,8 +41,7 @@ namespace UrlPrettyPrint.Controllers
                 sb.AppendLine(parse[k]);
             }
 
-            ViewBag.pretty = sb.ToString();
-            return View("Pretty");
+            return sb.ToString();
         }
     }
 }
