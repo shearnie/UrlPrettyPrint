@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UrlPrettyPrint", "UrlPrettyPrint\UrlPrettyPrint.csproj", "{2527C442-45E6-4E4E-A436-E561F6C24267}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UrlPrettyPrintWeb", "UrlPrettyPrintWeb\UrlPrettyPrintWeb.csproj", "{5F4ACFBA-6654-4E17-A0C9-0415F92CE7F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UrlPrettyPrint", "UrlPrettyPrint\UrlPrettyPrint.csproj", "{5C98412F-EA65-4DF8-9866-35102092B9D3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2527C442-45E6-4E4E-A436-E561F6C24267}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2527C442-45E6-4E4E-A436-E561F6C24267}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2527C442-45E6-4E4E-A436-E561F6C24267}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2527C442-45E6-4E4E-A436-E561F6C24267}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F4ACFBA-6654-4E17-A0C9-0415F92CE7F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F4ACFBA-6654-4E17-A0C9-0415F92CE7F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F4ACFBA-6654-4E17-A0C9-0415F92CE7F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F4ACFBA-6654-4E17-A0C9-0415F92CE7F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C98412F-EA65-4DF8-9866-35102092B9D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C98412F-EA65-4DF8-9866-35102092B9D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C98412F-EA65-4DF8-9866-35102092B9D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C98412F-EA65-4DF8-9866-35102092B9D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

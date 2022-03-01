@@ -8,7 +8,7 @@
     }
   },
   "profiles": {
-    "UrlPrettyPrint": {
+    "UrlPrettyPrintWeb": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
