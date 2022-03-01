@@ -1,14 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
 using System.Text;
 using System.Web;
-using System.Web.Mvc;
 
 namespace UrlPrettyPrint.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly ILogger<HomeController> _logger;
+
+        public HomeController(ILogger<HomeController> logger)
+        {
+            _logger = logger;
+        }
         public ActionResult Index()
         {
             return View();
@@ -36,7 +40,7 @@ namespace UrlPrettyPrint.Controllers
             if (!keys.Any()) return View("Pretty");
 
             // determine spacing
-            var longestLength = keys.OrderByDescending(k => k.Length).FirstOrDefault().Length;
+            var longestLength = keys.OrderByDescending(k => k.Length).First().Length;
 
             foreach (string k in keys)
             {
@@ -48,6 +52,11 @@ namespace UrlPrettyPrint.Controllers
 
             ViewBag.pretty = sb.ToString();
             return View("Pretty");
+        }
+
+        public ActionResult Error()
+        {
+            return View();
         }
     }
 }
